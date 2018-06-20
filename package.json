@@ -1,0 +1,30 @@
+{
+  "name": "not_spandee",
+  "description": "react app similar to spandee. Based on react with react-router and redux",
+  "version": "0.0.53",
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/react-fontawesome": "0.0.20",
+    "bootstrap": "^4.1.1",
+    "history": "^4.7.2",
+    "jquery": "^3.3.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "3.7.2"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
