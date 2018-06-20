@@ -3,9 +3,6 @@ import ActionBar from "../../../../common/components/actionBar/ActionBar";
 import PropTypes from "prop-types";
 
 const ListItem = (props) => {
-
-
-    console.log(props);
     const {index} = props;
     const {title, date, sum, description, type, category} = props.record;
     return (

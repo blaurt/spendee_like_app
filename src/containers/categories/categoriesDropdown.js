@@ -18,7 +18,6 @@ class CategoriesDropdown extends React.Component {
     };
 
     render() {
-        console.log(this.props);
         const {categories} = this.props;
         return (
             <div className="dropdown mb-3">

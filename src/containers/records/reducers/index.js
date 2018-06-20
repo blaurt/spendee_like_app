@@ -24,13 +24,20 @@ const records = (state = initialState, action) => {
             break;
 
         case UPDATE_RECORD:
-            return Object.assign({}, state, {
-                isLoading: false,
-                errors: action.payload
-            });
+            const updatedRecord = {
+                category: action.payload.category,
+                date: action.payload.date,
+                description: action.payload.description,
+                sum: action.payload.date,
+                timestamp: action.payload.timestamp,
+                title: action.payload.title,
+                type: action.payload.description
+            };
+            newState.splice(action.payload.index, 1, updatedRecord);
+            break;
 
         case DELETE_RECORD:
-            delete newState.splice(action.payload.index, 1);
+            newState.splice(action.payload.index, 1);
             break;
         default:
             return state;

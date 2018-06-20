@@ -20,7 +20,6 @@ class List extends React.Component {
 
     render() {
         const {history, categories, removeCategory} = this.props;
-        console.log(this.props);
         return (
             <React.Fragment>
                 <div className="h1 text-center p-3">All Categories</div>
@@ -47,7 +46,6 @@ class List extends React.Component {
                             <tbody>
                             {
                                 categories.map((category, index) => {
-                                    console.log(category);
                                     return (
                                         <tr key={category.timestamp}>
                                             <th scope="row">{index + 1}</th>

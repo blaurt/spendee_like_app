@@ -22,7 +22,6 @@ export const buildUrl = (route, params) => {
     for (let param in params) {
         if (params.hasOwnProperty(param) && route.includes(`:${param}`)) {
             route = route.replace(`:${param}`, params[param]);
-            console.log(route.replace(`:${param}`, params[param]));
         }
     }
     return route;

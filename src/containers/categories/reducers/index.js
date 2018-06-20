@@ -15,7 +15,6 @@ if (savedState !== null) {
 }
 
 const categories = (state = initialState, action) => {
-    console.log(action);
     let newState = state.slice(0);
 
     switch (action.type) {
@@ -26,13 +25,16 @@ const categories = (state = initialState, action) => {
             break;
 
         case UPDATE_CATEGORY:
-            return Object.assign({}, state, {
-                isLoading: false,
-                errors: action.payload
-            });
-
+            const updatedCategory = {
+                timestamp: action.payload.timestamp,
+                description: action.payload.description,
+                name: action.payload.name,
+                type: action.payload.description
+            };
+            newState.splice(action.payload.index, 1, updatedCategory);
+            break;
         case DELETE_CATEGORY:
-            delete newState.splice(action.payload.index, 1);
+            newState.splice(action.payload.index, 1);
             break;
 
         default:

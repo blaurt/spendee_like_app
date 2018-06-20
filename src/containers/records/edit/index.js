@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {createRecord} from "../actions/recordActionsCreators";
+import {updateRecord} from "../actions/recordActionsCreators";
 import {bindActionCreators} from "redux";
 import CategoriesDropdown from "../../categories/categoriesDropdown";
 
@@ -20,7 +20,6 @@ class RecordEdit extends React.Component {
         event.preventDefault();
         const {props, state} = this;
         const formElements = this.formRef.current.elements;
-        console.log(formElements);
         const payload = {
             type: formElements.record_type.value,
             sum: Number(formElements.sum.value),
@@ -28,10 +27,11 @@ class RecordEdit extends React.Component {
             date: formElements.date.value,
             description: formElements.description.value,
             timestamp: Date.now(),
-            category: state.category
+            category: state.category,
+            index: props.match.params.id
         };
 
-        props.addRecord(payload);
+        props.updateRecord(payload);
         props.history.go(-1);
 
     };
@@ -39,10 +39,6 @@ class RecordEdit extends React.Component {
     render() {
         const id = this.props.match.params.id;
         const currentRecord = this.props.records[id];
-        console.log(currentRecord);
-        console.log(id);
-        console.log(currentRecord.type === 'income');
-        console.log(currentRecord.type !== 'income');
         return (
             <React.Fragment>
                 <div className="h1 text-center p-3">Edit record with id: {id}</div>
@@ -128,5 +124,5 @@ class RecordEdit extends React.Component {
 }
 
 const mapStateToProps = ({records}) => ({records});
-const mapDispatchToProps = (dispatch) => ({addRecord: bindActionCreators(createRecord, dispatch)});
+const mapDispatchToProps = (dispatch) => ({updateRecord: bindActionCreators(updateRecord, dispatch)});
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RecordEdit));

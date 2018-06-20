@@ -5,7 +5,6 @@ import {
 } from './actionTypes'
 
 export function createCategory(payload) {
-    console.log(payload);
     return {
         type: CREATE_CATEGORY,
         payload

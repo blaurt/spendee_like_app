@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {withRouter} from "react-router-dom";
-import {createCategory} from "../actions/categoryActionsCreators";
+import {updateCategory} from "../actions/categoryActionsCreators";
 
 // TODO add validation to fields
 class EditCategory extends React.Component {
@@ -16,20 +16,19 @@ class EditCategory extends React.Component {
             name: formElements.title.value,
             description: formElements.description.value,
             timestamp: Date.now(),
+            index: props.match.params.id
         };
 
-        props.addCategory(payload);
+        props.updateCategory(payload);
         props.history.go(-1);
     };
 
     render() {
-        console.log(this.props);
         const id = this.props.match.params.id;
-        console.log(id);
         const category = this.props.categories[id];
         return (
             <React.Fragment>
-                <div className="h1 text-center p-3">Edit category:</div>
+                <div className="h1 text-center p-3">Edit category: {category.name}</div>
 
                 <div className="row">
                     <div className="col-sm-12">
@@ -69,5 +68,5 @@ class EditCategory extends React.Component {
 }
 
 const mapStateToProps = ({categories}) => ({categories});
-const mapDispatchToProps = (dispatch) => ({addCategory: bindActionCreators(createCategory, dispatch)});
+const mapDispatchToProps = (dispatch) => ({updateCategory: bindActionCreators(updateCategory, dispatch)});
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditCategory))

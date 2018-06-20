@@ -12,14 +12,11 @@ class NewCategory extends React.Component {
         event.preventDefault();
         const {props} = this;
         const formElements = this.formRef.current.elements;
-        console.log(formElements);
         const payload = {
             name: formElements.title.value,
             description: formElements.description.value,
             timestamp: Date.now(),
         };
-
-        console.log(payload);
 
         props.addCategory(payload);
         props.history.go(-1);
@@ -27,7 +24,6 @@ class NewCategory extends React.Component {
     };
 
     render() {
-        console.log(this.props);
         return (
             <React.Fragment>
                 <div className="h1 text-center p-3">Create new record</div>
