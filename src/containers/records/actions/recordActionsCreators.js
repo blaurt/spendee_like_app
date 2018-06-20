@@ -4,23 +4,23 @@ import {
     DELETE_RECORD
 } from './actionTypes'
 
-export function createRecord(payload) {
+export const createRecord = (payload) => {
     return {
         type: CREATE_RECORD,
         payload
     };
-}
+};
 
-export function updateRecord(payload) {
+export const updateRecord = (payload) => {
     return {
         type: UPDATE_RECORD,
         payload
     };
-}
+};
 
-export function deleteRecord(payload) {
+export const deleteRecord = (index) => {
     return {
         type: DELETE_RECORD,
-        payload
+        payload: {index}
     };
-}
+};

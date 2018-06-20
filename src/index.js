@@ -1,15 +1,16 @@
 import React from 'react'
 import {render} from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
-import App from './components/App';
+import App from './App';
 
-import store, {history} from "./utils/store";
+import store from "./utils/store";
 import {Provider} from "react-redux";
 
+import './styles/style.css'
 
 render((
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter >
             <App/>
         </BrowserRouter>
     </Provider>

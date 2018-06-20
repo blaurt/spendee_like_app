@@ -1,22 +1,16 @@
 import React from 'react'
-import { Container } from 'reactstrap';
-import './style.css';
 
 class About extends React.Component {
 
-  render() {
+    render() {
 
-    return (
-    	<div id="about">
-	    	<Container>
-	    		<h2 className="text-center">
-		        About
-		      </h2>
-		      <p>About page content</p>
-			  </Container>
-		  </div>
-    );
-  }
+        return (
+            <div id="about">
+                <p>This app is made by Suverov Dmitriy</p>
+                <p>Work is in progress...</p>
+            </div>
+        );
+    }
 
 }
 

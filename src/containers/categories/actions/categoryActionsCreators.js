@@ -5,6 +5,7 @@ import {
 } from './actionTypes'
 
 export function createCategory(payload) {
+    console.log(payload);
     return {
         type: CREATE_CATEGORY,
         payload
@@ -18,9 +19,9 @@ export function updateCategory(payload) {
     };
 }
 
-export function deleteCategory(payload) {
+export function deleteCategory(index) {
     return {
         type: DELETE_CATEGORY,
-        payload
+        payload: {index}
     };
 }

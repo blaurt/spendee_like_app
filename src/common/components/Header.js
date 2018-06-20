@@ -20,7 +20,6 @@ class Header extends Component {
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item active"><Link className="nav-link" to={Links.records} >Records</Link></li>
                             <li className="nav-item active"><Link className="nav-link" to={Links.categories} >Categories</Link></li>
-                            <li className="nav-item active"><Link className="nav-link" to={Links.details} >Details</Link></li>
                             <li className="nav-item active"><Link className="nav-link" to={Links.about} >About</Link></li>
                         </ul>
                     </div>
